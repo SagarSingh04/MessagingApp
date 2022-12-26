@@ -41,7 +41,7 @@ router.get('/getGroups', async(req, res, next) => {
         console.log(err);
         res.status(500).json({
             message: "Error",
-            result: result
+            error: err
         });
     }
 });
