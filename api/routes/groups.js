@@ -13,10 +13,10 @@ router.get('/getGroups', async(req, res, next) => {
         let numPerPage = req.query.numPerPage;
         let page = req.query.page;
         let skip = (page - 1) * numPerPage;
-        //Limiting the retrieved user list for pagination
+        //Limiting the retrieved group list for pagination
         let limit = skip + ',' + numPerPage
 
-        //Query to retrieve total number users from table
+        //Query to retrieve total number groups from table
         let rowResult = await db.query("SELECT count(*) as numRows FROM chat_group");
         let numRows = rowResult[0].numRows;
         let numPages = Math.ceil(numRows / numPerPage);
